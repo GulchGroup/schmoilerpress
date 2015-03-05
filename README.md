@@ -18,7 +18,7 @@ SchmoilerPress Installation
 - download wordpress: "wp core download"
 - create local mysql db (db name and creds of your choice)
 - add creds to wp-config: "wp core config --dbname=mysitedb --dbuser=root --dbpass=password --dbhost=127.0.0.1"
-- navigate to 'wp-content/themes/aledade/'
+- navigate to 'wp-content/themes/mytheme/'
     - run "sudo npm install"
     - run "gulp"
 - if your browser doesn't automatically open and take you to it, navigate to 127.0.0.1:8007 in a browser
