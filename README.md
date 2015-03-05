@@ -1,3 +1,6 @@
+# SchmoilerPress
+## An hour of your life
+
 - install node and npm if you don't have them already
 - install wp-cli: http://wp-cli.org/
 - add wp-cli to path
