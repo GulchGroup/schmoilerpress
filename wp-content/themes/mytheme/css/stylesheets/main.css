@@ -1,0 +1,405 @@
+/****************************************************
+ * My Theme Stylesheet
+ * Primary style sheet
+ * Author: Chris Tallia
+ * WINTER 2015
+ ***************************************************/
+/****************************************************
+ * =IMPORTS
+ */
+/****************************************************
+ * =RESET
+ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  cursor: default; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+button {
+  border: none; }
+
+/****************************************************
+ * =MIXINS
+ */
+/**********
+ BREAKPOINTS
+*/
+/*************
+
+USAGE:
+
+  @include respond(laptop){
+  }
+  @include respond(netbook){
+  }
+  @include respond(tablet){
+  }
+  @include respond(mobile){
+  }
+
+**************/
+/**********
+ MODULES
+*/
+/****************************************************
+ * =VARIABLES
+ */
+/****************************************************
+ * =TYPOGRAPHY
+ */
+p {
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  line-height: 32px;
+  color: #444444; }
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #0099ff; }
+  a:hover {
+    color: #0099ff; }
+
+.italic {
+  font-style: italic; }
+
+strong {
+  font-weight: bold; }
+
+ol, ul {
+  list-style: disc;
+  margin-left: 20px; }
+  ol li, ul li {
+    padding-left: 10px;
+    margin-bottom: 10px; }
+
+/****************************************************
+ * =MODULAR ELEMENTS
+ */
+.hide {
+  display: none; }
+
+.block {
+  display: block;
+  width: 100%; }
+
+.clear {
+  clear: both; }
+
+.float-right {
+  float: right; }
+
+.float-left {
+  float: left; }
+
+.text-right {
+  text-align: right; }
+
+.text-center {
+  text-align: center; }
+
+.pad-sides {
+  padding-left: 20px;
+  padding-right: 20px; }
+
+.pad-ends {
+  padding-top: 40px;
+  padding-bottom: 40px; }
+
+.inline-block {
+  display: inline-block;
+  *display: inline;
+  vertical-align: top;
+  margin-right: -4px;
+  *zoom: 1; }
+
+a.block-link {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative; }
+
+.clear-p p {
+  font-size: inherit;
+  color: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0; }
+
+/****************************************************
+ * =FORM ELEMENTS
+ */
+input[type="text"], input[type="password"] {
+  display: inline-block;
+  *display: inline;
+  vertical-align: top;
+  margin-right: -4px;
+  *zoom: 1;
+  box-shadow: inset 0 0 2px 2px #999999;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  border: solid 1px #cccccc;
+  padding: 0 6px;
+  height: 28px;
+  font-size: 16px;
+  width: 200px;
+  box-shadow: none; }
+
+textarea {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  border: solid 1px #cccccc;
+  padding: 6px;
+  margin: 5px 0;
+  font-size: 16px;
+  width: 288px;
+  height: 50px; }
+
+th {
+  vertical-align: top; }
+
+/****************************************************
+ * =STRUCTURAL ELEMENTS
+ */
+div {
+  word-wrap: break-word; }
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 14px;
+  color: #444444;
+  /* set background color to footer color */
+  background: #444444; }
+
+/* main-cell gives the content portion (between header and footer) a minimum height */
+div.main-cell {
+  min-height: 600px; }
+
+div.full {
+  display: block;
+  width: 100%;
+  position: relative;
+  background: #ffffff; }
+
+div.container {
+  margin: 0 auto;
+  width: 1320px;
+  display: block;
+  position: relative;
+  clear: both; }
+  div.container.padTop {
+    padding-top: 40px; }
+  @media only screen and (min-width: 1280px) and (max-width: 1439px) {
+    div.container {
+      width: 1260px; } }
+  @media only screen and (min-width: 1024px) and (max-width: 1279px) {
+    div.container {
+      width: 960px; } }
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    div.container {
+      width: 720px; } }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    div.container {
+      width: 300px; } }
+
+div.header {
+  display: block;
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+  background: #444444;
+  color: #ffffff; }
+  div.header div.logo {
+    float: left;
+    height: inherit;
+    line-height: inherit; }
+
+div.nav {
+  float: right;
+  text-align: right;
+  height: inherit;
+  line-height: inherit; }
+  div.nav div.nav-cell {
+    display: inline-block;
+    *display: inline;
+    vertical-align: top;
+    margin-right: -4px;
+    *zoom: 1;
+    height: 80px;
+    line-height: 80px;
+    padding: 0 20px;
+    cursor: pointer; }
+    div.nav div.nav-cell:hover {
+      background: #cccccc; }
+
+div.nav-mobile {
+  border-radius: 6px;
+  width: 196px;
+  height: 40px;
+  margin: 18px 10px;
+  line-height: 40px;
+  border: solid 2px #ffffff;
+  color: #ffffff;
+  font-size: 18px;
+  background: url("../../img/icon-menu-40.png") right center no-repeat;
+  text-align: left;
+  padding-left: 20px;
+  position: absolute;
+  right: 0px;
+  z-index: 3; }
+  div.nav-mobile.expanded {
+    height: auto;
+    background: #333333; }
+  div.nav-mobile div.mobile-nav-cell {
+    display: block;
+    height: 0px;
+    line-height: 0px;
+    overflow: hidden; }
+    div.nav-mobile div.mobile-nav-cell.active, div.nav-mobile div.mobile-nav-cell.open {
+      height: 40px;
+      line-height: 40px; }
+
+div.cell75 {
+  display: inline-block;
+  *display: inline;
+  vertical-align: top;
+  margin-right: -4px;
+  *zoom: 1;
+  width: 75%; }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    div.cell75 {
+      width: 100%; } }
+
+div.cell25 {
+  display: inline-block;
+  *display: inline;
+  vertical-align: top;
+  margin-right: -4px;
+  *zoom: 1;
+  width: 25%; }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    div.cell25 {
+      width: 100%; } }
+
+div.table-main-wrap {
+  padding: 20px; }
+  div.table-main-wrap table.table-main {
+    width: 100%; }
+    div.table-main-wrap table.table-main thead {
+      background: transparent;
+      font-size: 11px;
+      text-transform: uppercase;
+      text-align: left;
+      padding-bottom: 20px; }
+      div.table-main-wrap table.table-main thead tr th {
+        padding: 0 0 20px 10px;
+        color: #aaaaaa; }
+    div.table-main-wrap table.table-main tbody {
+      background: #ffffff; }
+      div.table-main-wrap table.table-main tbody tr:nth-child(odd) {
+        background: #dddddd; }
+      div.table-main-wrap table.table-main tbody tr td {
+        padding: 20px; }
+      div.table-main-wrap table.table-main tbody td.cell-checkbox {
+        width: 100px; }
+
+div.footer {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+  background: #444444;
+  color: #ffffff; }
+
+div.btn, a.btn {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  display: inline-block;
+  *display: inline;
+  vertical-align: top;
+  margin-right: -4px;
+  *zoom: 1;
+  border-radius: 6px; }
+  div.btn.small, a.btn.small {
+    height: 24px;
+    line-height: 24px;
+    padding: 0 30px;
+    font-size: 11px;
+    background: transparent;
+    border: solid 1px #666666;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #666666;
+    margin-top: 20px;
+    font-style: normal;
+    font-weight: bold; }
+    div.btn.small:hover, a.btn.small:hover {
+      background: #666666;
+      color: #ffffff; }
+  div.btn.medium, a.btn.medium {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    font-size: 18px;
+    background: transparent;
+    border: solid 3px #666666;
+    cursor: pointer;
+    font-style: normal; }
+    div.btn.medium:hover, a.btn.medium:hover {
+      background: #666666;
+      color: #ffffff; }
+
+.mobile-show {
+  display: none; }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .mobile-show {
+      display: block; } }
+
+.mobile-hide {
+  display: inline; }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    .mobile-hide {
+      display: none; } }
+
+.tablet-show {
+  display: none; }
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .tablet-show {
+      display: inline; } }
+
+.tablet-hide {
+  display: inline; }
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .tablet-hide {
+      display: none; } }
+
+/****************************************************
+ * =WORDPRESS STYLES
+ */
+.posted-on {
+  color: #999999; }

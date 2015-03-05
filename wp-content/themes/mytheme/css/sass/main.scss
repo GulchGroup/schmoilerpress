@@ -1,0 +1,421 @@
+/****************************************************
+ * My Theme Stylesheet
+ * Primary style sheet
+ * Author: Chris Tallia
+ * WINTER 2015
+ ***************************************************/
+
+/****************************************************
+ * =IMPORTS
+ */
+
+@import 'bourbon/bourbon';
+@import 'reset';
+@import 'mixins';
+
+/****************************************************
+ * =VARIABLES
+ */
+
+//$grey: #676767;
+//$blue: #3F94CC;
+
+/****************************************************
+ * =TYPOGRAPHY
+ */
+
+//@font-face {
+//  font-family: geosans;
+//  src: url('../../fonts/geosanslight.woff');
+//}
+
+h1{
+
+}
+
+h2{
+
+}
+
+p{
+  margin: 0 0 20px 0;
+  font-size:18px;
+  line-height: 32px;
+  color: #444444
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+  color: #0099ff;
+  &:hover{
+    color: #0099ff;
+  }
+}
+
+.italic{
+  font-style: italic;
+}
+
+strong{
+  font-weight: bold;
+}
+
+ol, ul {
+  list-style: disc;
+  margin-left: 20px;
+  li{
+    padding-left: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+/****************************************************
+ * =MODULAR ELEMENTS
+ */
+
+.hide{
+  display:none;
+}
+
+.block{
+  display:block;
+  width:100%;
+}
+
+.clear{
+  clear:both;
+}
+
+.float-right{
+  float:right;
+}
+
+.float-left{
+  float:left;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.pad-sides{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.pad-ends{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.inline-block{
+  display:inline-block;
+  *display: inline;
+  vertical-align:top;
+  margin-right:-4px;
+  *zoom: 1;
+}
+
+a.block-link{
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+}
+
+.clear-p{
+  p{
+    font-size: inherit;
+    color: inherit;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/****************************************************
+ * =FORM ELEMENTS
+ */
+
+input{
+  &[type="text"], &[type="password"]{
+    @include inlineblock;
+    @include innerShadow;
+    font-family:"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    border:solid 1px #cccccc;
+    padding:0 6px;
+    height:28px;
+    font-size:16px;
+    width:200px;
+    box-shadow: none;
+  }
+}
+
+textarea{
+  font-family:"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  border:solid 1px #cccccc;
+  padding:6px;
+  margin:5px 0;
+  font-size:16px;
+  width:288px;
+  height:50px;
+}
+
+th{
+  vertical-align: top;
+}
+
+/****************************************************
+ * =STRUCTURAL ELEMENTS
+ */
+
+html{
+
+}
+
+div{
+  word-wrap: break-word;
+}
+
+body{
+  font-family:"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size:14px;
+  color:#444444;
+  /* set background color to footer color */
+  background: #444444;
+}
+
+/* main-cell gives the content portion (between header and footer) a minimum height */
+div.main-cell{
+  min-height: 600px;
+}
+
+div.full{
+  display: block;
+  width: 100%;
+  position: relative;
+  background: #ffffff;
+}
+
+div.container{
+  margin: 0 auto;
+  width: 1320px;
+  display: block;
+  position: relative;
+  clear: both;
+  &.padTop{
+    padding-top: 40px;
+  }
+  @include respond(laptop){
+    width:1260px;
+  }
+  @include respond(netbook){
+    width:960px;
+  }
+  @include respond(tablet){
+    width:720px;
+  }
+  @include respond(mobile){
+    width: 300px;
+  }
+}
+
+div.header{
+  display: block;
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+  background: #444444;
+  color: #ffffff;
+  div.logo{
+    float: left;
+    height: inherit;
+    line-height: inherit;
+  }
+}
+
+div.nav{
+  float: right;
+  text-align: right;
+  height: inherit;
+  line-height: inherit;
+  div.nav-cell{
+    @include inlineblock;
+    height: 80px;
+    line-height: 80px;
+    padding: 0 20px;
+    cursor: pointer;
+    &:hover{
+      background: #cccccc;
+    }
+  }
+}
+div.nav-mobile{
+  @include round-corners;
+  width: 196px;
+  height: 40px;
+  margin: 18px 10px;
+  line-height: 40px;
+  border: solid 2px #ffffff;
+  color: #ffffff;
+  font-size: 18px;
+  background: url("../../img/icon-menu-40.png") right center no-repeat;
+  text-align: left;
+  padding-left: 20px;
+  position: absolute;
+  right: 0px;
+  z-index: 3;
+  &.expanded{
+    height: auto;
+    background: #333333;
+  }
+  div.mobile-nav-cell{
+    display: block;
+    height: 0px;
+    line-height: 0px;
+    overflow: hidden;
+    &.active, &.open{
+      height: 40px;
+      line-height: 40px;
+    }
+  }
+}
+
+div.cell75{
+  @include inlineblock;
+  width: 75%;
+  @include respond(mobile){
+    width: 100%;
+  }
+}
+
+div.cell25{
+  @include inlineblock;
+  width: 25%;
+  @include respond(mobile){
+    width: 100%;
+  }
+}
+
+div.table-main-wrap{
+  padding: 20px;
+  table.table-main{
+    width: 100%;
+    thead{
+      background: transparent;
+      font-size:11px;
+      text-transform: uppercase;
+      text-align: left;
+      padding-bottom:20px;
+      tr{
+        th{
+          padding:0 0 20px 10px;
+          color: #aaaaaa;
+        }
+      }
+    }
+    tbody{
+      background: #ffffff;
+      tr{
+        &:nth-child(odd){
+          background: #dddddd;
+        }
+        td{
+          padding: 20px;
+        }
+      }
+      td.cell-checkbox{
+        width: 100px;
+      }
+    }
+  }
+}
+
+div.footer{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+  background: #444444;
+  color: #ffffff;
+}
+
+div.btn, a.btn{
+  font-family:"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  @include inlineblock;
+  @include round-corners;
+  &.small{
+    height: 24px;
+    line-height: 24px;
+    padding: 0 30px;
+    font-size: 11px;
+    background: transparent;
+    border: solid 1px #666666;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #666666;
+    margin-top: 20px;
+    font-style: normal;
+    font-weight: bold;
+    &:hover{
+      background: #666666;
+      color: #ffffff;
+    }
+  }
+  &.medium{
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    font-size: 18px;
+    background: transparent;
+    border: solid 3px #666666;
+    cursor: pointer;
+    font-style: normal;
+    &:hover{
+      background: #666666;
+      color: #ffffff;
+    }
+  }
+}
+
+.mobile-show{
+  display: none;
+  @include respond(mobile){
+    display: block;
+  }
+}
+
+.mobile-hide{
+  display: inline;
+  @include respond(mobile){
+    display: none;
+  }
+}
+
+.tablet-show{
+  display: none;
+  @include respond(tablet){
+    display: inline;
+  }
+}
+
+.tablet-hide{
+  display: inline;
+  @include respond(tablet){
+    display: none;
+  }
+}
+
+/****************************************************
+ * =WORDPRESS STYLES
+ */
+
+.posted-on{
+  color: #999999;
+}
