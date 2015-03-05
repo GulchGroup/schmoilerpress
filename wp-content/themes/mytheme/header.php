@@ -43,14 +43,14 @@
 
     <div class="header">
         <div class="container">
-            <div class="logo">logo</div>
+            <div class="logo"><a href="/"><img style="margin-top: 10px;" src="<?php bloginfo('template_url');?>/img/logo.png"></a></div>
             <div class="nav mobile-hide">
-                <a class="tablet-hide" href="<?php echo $pagePath; ?>/home/"><div class="nav-home nav-cell" navTo="/home/">Home</div></a>
-                <a href="<?php echo $pagePath; ?>/blog/"><div class="nav-blog nav-cell" navTo="/blog/">Blog</div></a>
+                <a href="/"><div class="nav-cell" navTo="/">Home</div></a>
+                <a href="/blog/"><div class="nav-cell" navTo="/blog/">Blog</div></a>
             </div>
             <div class="nav-mobile mobile-show">
-                <div class="nav-home mobile-nav-cell active" navTo="/home/">home</div>
-                <div class="nav-blog mobile-nav-cell" navTo="/blog/">blog</div>
+                <div class="mobile-nav-cell active" navTo="/">home</div>
+                <div class="mobile-nav-cell" navTo="/blog/">blog</div>
             </div>
         </div>
     </div>

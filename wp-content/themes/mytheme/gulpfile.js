@@ -56,13 +56,6 @@ gulp.task('connect', function() {
 //        .pipe(connect.reload());
 //});
 
-
-// RUNS DJANGO SERVER
-// OMIT TO RUN DJANGO SERVER SEPARATELY
-
-//gulp.task('django', shell.task(['. venv/bin/activate && pip install -r requirements.txt && python ./manage.py runserver']));
-
-
 gulp.task('watch', function() {
 
     gulp.watch('css/sass/*.scss', ['sass']);
